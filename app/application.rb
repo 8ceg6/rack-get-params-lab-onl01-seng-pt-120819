@@ -22,10 +22,10 @@ class Application
         end 
       end 
     elsif req.path.match(/add/)
-      search_term = req.params["items"]
-      if @@items.include?(search_term)
-        @@cart << search_term
-        resp.write "added #{search_term}"
+      search_item = req.params["items"]
+      if @@items.include?(search_item)
+        @@cart << search_item
+        resp.write "added #{search_item}"
       else 
         resp.write "We don't have that item"
       end 
